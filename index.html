@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuy Cuaca</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-mode="day">
+    <div class="weather-card" data-mode="day">
+        <div class="sun"></div>
+        <div class="moon"></div>
+
+        <div class="weather-top">
+
+            <h2 class="city">jakarta</h2>
+
+            <div class="date">--</div>
+
+            <div class="clock"></div>
+            
+            <div class="details-top">
+
+                <div class="humidity">--%</div>
+
+                <div class="wind">-- km/h</div>
+
+            </div>
+        </div>
+
+        <div class="weather-center">
+
+            <div class="weather-icon"></div>
+
+            <div class="temperature">-- °C</div>
+            
+        </div>
+
+<div class="region-carousel-wrapper">
+  <button class="carousel-nav left" onclick="scrollRegion(-1)">&#10094;</button>
+  
+  <div class="region-carousel" id="region-carousel">
+    <!-- Kartu kota diisi dari JS -->
+  </div>
+  
+  <button class="carousel-nav right" onclick="scrollRegion(1)">&#10095;</button>
+</div>
+
+        <div id="forecast"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
