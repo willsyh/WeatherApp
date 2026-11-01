@@ -1,24 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuy Cuaca</title>
     <link rel="stylesheet" href="style.css"/>
 </head>
-<body data-mode="day">
-    <div class="weather-card" data-mode="day">
+<body class="day">
+    <div class="weather-card day">
+        <div class="fx" aria-hidden="true"></div>
         <div class="sun"></div>
         <div class="moon"></div>
 
+        <button class="unit-btn" type="button" title="Ganti satuan suhu" aria-label="Ganti satuan suhu">°C</button>
+        <button class="locate-btn" type="button" title="Gunakan lokasi saya" aria-label="Gunakan lokasi saya">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+            </svg>
+        </button>
+
+        <form class="search" role="search" autocomplete="off">
+            <input class="search-input" type="search" placeholder="Cari kota..." aria-label="Cari kota">
+            <ul class="suggestions" role="listbox" hidden></ul>
+        </form>
+
         <div class="weather-top">
 
-            <h2 class="city">jakarta</h2>
+            <h2 class="city">--</h2>
 
             <div class="date">--</div>
 
             <div class="clock"></div>
-            
+
             <div class="details-top">
 
                 <div class="humidity">--%</div>
@@ -33,12 +47,24 @@
             <div class="weather-icon"></div>
 
             <div class="temperature">-- °C</div>
-            
+
         </div>
 
+        <div class="condition-line">
+            <span class="condition">--</span>
+            <span class="feels"></span>
+        </div>
+
+        <div class="details-grid"></div>
+
+        <div id="hourly" class="hourly-strip"></div>
+
         <div id="forecast"></div>
+
+        <p class="source"></p>
     </div>
 
+    <script src="data/kelurahan/index.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
